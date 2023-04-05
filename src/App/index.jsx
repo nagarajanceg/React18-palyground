@@ -9,24 +9,24 @@ function App() {
     useEffect(
         () => {
             // Whenever deliver count reaches o to display the status as not delivered
-        if(count==0){
+        if(count===0){
             setStatus("Not Delievered")
         }
     });
 
     return (
       <div className="App">
-        <h1>The package portal status: {status}</h1>
-        <h2>Delivery Count: {count}</h2>
+        <h1>The package portal status: <span data-cy="status-widget">{status}</span></h1>
+        <h2>Delivery Count: <span data-cy="delivery-count">{count}</span></h2>
         <Stack direction="row" justifyContent="center" spacing={2}>
-        <Button variant='contained' color="success"  onClick={()=>{
+        <Button variant='contained' color="success" data-cy="deliver" onClick={()=>{
             setStatus("Delivered")
             setCount((count)=>count+1)
         }}>
             Deliver
         </Button>
         {/**Disable not Deliver button when count reaches 0 */}
-        <Button  variant='contained' color="error" disabled={count == 0} onClick={()=>setCount((count)=>count-1)}> 
+        <Button  variant='contained' color="error" data-cy="not-deliver" disabled={count == 0} onClick={()=>setCount((count)=>count-1)}> 
             Not Deliver
         </Button>
         </Stack>
