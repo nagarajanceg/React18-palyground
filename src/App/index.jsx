@@ -1,5 +1,6 @@
 import React, { useState , useEffect} from 'react';
 import './App.css';
+import { Button, Stack } from '@mui/material';
 
 function App() {
     const [status, setStatus] = useState("Not Delievered");
@@ -16,23 +17,24 @@ function App() {
       <div className="App">
         <h1>The package is: {status}</h1>
         <h2>Delivery Count: {count}</h2>
-        <button  class="deliver-btn" onClick={()=>{
+        <Stack direction="row" justifyContent="center" spacing={2}>
+        <Button variant='contained' color="success"  onClick={()=>{
             setStatus("Delivered")
             setCount((count)=>count+1)
         }
             }>
             Deliver
-        </button>
-        <button  class="deliver-btn" onClick={()=>{
-            // setStatus("NotDelievered")
+        </Button>
+        <Button  variant='contained' color="error" disabled={count == 0} onClick={()=>{
             if(count!==0){
                 setCount((count)=>count-1)
             }else{
                 alert("counter can't be decrement below zero ");
             }
         }}> 
-            NotDeliver
-        </button>
+            Not Deliver
+        </Button>
+        </Stack>
 
       </div>
     );
