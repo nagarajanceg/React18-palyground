@@ -1,0 +1,14 @@
+.status {
+    text-align: center;
+  }
+  
+  .deliver-btn {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 10px 60px;
+    margin: 10px;
+    cursor:pointer;
+  }
+  

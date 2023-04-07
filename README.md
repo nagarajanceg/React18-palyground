@@ -1,7 +1,10 @@
 The purpose of the app is to have simple behaviour to play around with React hooks.
 
- Material UI included - https://mui.com/material-ui
+Material UI included - https://mui.com/material-ui
 
+Component testing using cypress
+
+Star rrating component exists at route http://localhost:3000/rating
 
 # Getting Started with Create React App
 
