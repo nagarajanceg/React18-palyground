@@ -1,10 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import "./page.css";
 import { Button, Stack } from "@mui/material";
 
 function Status() {
   const [status, setStatus] = useState("Not Delievered");
-  const [count, setCount] = useState(0);
+  const reducer = (count, type) => {
+    switch (type) {
+      case "increment":
+        return count + 1;
+      case "decrement":
+        return count - 1;
+      default:
+        throw new Error();
+    }
+  };
+  const [count, setCount] = useReducer(reducer, 0);
 
   useEffect(() => {
     // Whenever deliver count reaches o to display the status as not delivered
@@ -28,7 +38,7 @@ function Status() {
           data-cy="deliver"
           onClick={() => {
             setStatus("Delivered");
-            setCount((count) => count + 1);
+            setCount("increment");
           }}
         >
           Deliver
@@ -39,7 +49,7 @@ function Status() {
           color="error"
           data-cy="not-deliver"
           disabled={count === 0}
-          onClick={() => setCount((count) => count - 1)}
+          onClick={() => setCount("decrement")}
         >
           Not Deliver
         </Button>
