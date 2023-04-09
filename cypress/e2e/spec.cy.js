@@ -1,15 +1,9 @@
-import App from "../../src/App";
-describe("App.cy.jsx", () => {
-  it("should check component mount", () => {
-    cy.mount(<App />);
-  });
-
+describe('template spec', () => {
   beforeEach(() => {
-    cy.mount(<App />);
+    cy.visit('http://localhost:3000/');
   });
 
   it("check for default values", () => {
-    cy.mount(<App />);
     cy.get("[data-cy=status-widget]").should("have.text", "Not Delievered");
     cy.get("[data-cy=delivery-count]").should("have.text", "0");
     cy.get("[data-cy=deliver]").should("have.text", "Deliver");
@@ -43,4 +37,4 @@ describe("App.cy.jsx", () => {
     cy.get("[data-cy=delivery-count]").should("have.text", "0");
     cy.get("[data-cy=not-deliver]").should("be.disabled");
   });
-});
+})
