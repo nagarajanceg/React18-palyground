@@ -22,7 +22,8 @@
     "eject": "react-scripts eject",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
-    "cy:component":"cypress run --component"
+    "cy:component":"cypress run --component",
+    "deploy": "node deploy"
   },
   "eslintConfig": {
     "extends": [
