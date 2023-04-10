@@ -23,7 +23,8 @@
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "cy:component":"cypress run --component",
-    "deploy": "node deploy"
+    "deploy": "node deploy",
+    "tilt": "tilt up"
   },
   "eslintConfig": {
     "extends": [
