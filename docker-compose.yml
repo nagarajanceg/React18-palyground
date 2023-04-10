@@ -3,7 +3,7 @@ version: "3.8"
 services:
   react-palyground:
     container_name: docker-react-playground
-    image: docker-react-common-bundle
+    image: docker-react-playground
     build:
       context: .
     ports:

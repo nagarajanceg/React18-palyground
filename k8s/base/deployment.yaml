@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: docker-react-playground
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: docker-react-playground
+  template:
+    metadata:
+      labels:
+        app: docker-react-playground
+    spec:
+      containers:
+        - name: docker-react-playground
+          image: docker-react-playground
+          ports:
+            - containerPort: 3000
+          env:
+            - name: REACT_APP_ENV
+              value: dev
