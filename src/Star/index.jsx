@@ -4,8 +4,15 @@ import "./page.css";
 
 const createArray = (length) => [...Array(length)];
 
-function Star({ selected = false, onSelect }) {
-  return <FaStar color={selected ? "red" : "grey"} onClick={onSelect} />;
+function Star({ selected = false, onSelect, pos }) {
+  return (
+    <FaStar
+      color={selected ? "red" : "grey"}
+      onClick={onSelect}
+      role="star"
+      aria-label={`star-${pos}`}
+    />
+  );
 }
 
 const StarRating = ({ totalStars = 5 }) => {
@@ -19,10 +26,11 @@ const StarRating = ({ totalStars = 5 }) => {
             key={i}
             selected={selectedStars > i}
             onSelect={() => setSelectedStars(i + 1)}
+            pos={i + 1}
           />
         ))}
       </div>
-      <div>{selectedStars + "/" + totalStars}</div>
+      <div id="result-rating">{selectedStars + "/" + totalStars}</div>
     </div>
   );
 };

@@ -4,7 +4,7 @@ describe('template spec', () => {
   });
 
   it("check for default values", () => {
-    cy.get("[data-cy=status-widget]").should("have.text", "Not Delievered");
+    cy.get("[data-cy=status-widget]").should("have.text", "Not Delivered");
     cy.get("[data-cy=delivery-count]").should("have.text", "0");
     cy.get("[data-cy=deliver]").should("have.text", "Deliver");
     cy.get("[data-cy=not-deliver]").should("have.text", "Not Deliver");
